@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { AlertTriangle, Boxes, DollarSign, FlaskConical, Plus } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { Delta, Gauge, Sparkline, StockBars } from '../../components/charts'
+import { CountUp, Delta, Gauge, Sparkline, StockBars } from '../../components/charts'
 import { goal, kpis, stockMonths, todo } from '../../data/mock'
 import { getProfile } from '../../lib/auth'
 
@@ -54,7 +54,7 @@ export default function Overview() {
                   <div>
                     <div className="text-xs text-muted">{k.label}</div>
                     <div className="mt-1 flex items-baseline gap-2">
-                      <span className="text-2xl font-extrabold">{k.value}</span>
+                      <span className="text-2xl font-extrabold"><CountUp value={k.value} /></span>
                       <Delta v={k.delta} />
                     </div>
                   </div>

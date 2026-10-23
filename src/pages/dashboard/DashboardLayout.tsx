@@ -1,5 +1,5 @@
 import { Bell, LogOut, Plus, Search } from 'lucide-react'
-import { Link, Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../../components/Logo'
 import ThemeToggle from '../../components/ThemeToggle'
 import { navItems, tabs } from '../../data/nav'
@@ -27,7 +27,8 @@ function Tabs() {
 }
 
 function Shell() {
-  const nav = useNavigate()
+    const nav = useNavigate()
+  const { pathname } = useLocation()
   const name = getProfile()?.name || 'there'
   const initials = name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase() || 'S'
 
@@ -92,7 +93,7 @@ function Shell() {
 
         <main className="min-w-0 flex-1">
           <div className="mb-4 overflow-x-auto md:hidden"><Tabs /></div>
-          <Outlet />
+                    <div key={pathname} className="page-in"><Outlet /></div>
         </main>
       </div>
 
