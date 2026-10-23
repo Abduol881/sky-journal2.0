@@ -72,6 +72,7 @@ body {
 }
 ::view-transition-old(root) { z-index: 1; }
 ::view-transition-new(root) { z-index: 2; }
+
 /* OTP boxes: gradient border when focused or filled */
 .otp-box {
   border-color: transparent;

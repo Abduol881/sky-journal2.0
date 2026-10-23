@@ -34,3 +34,12 @@ export function maskEmail(email: string) {
   if (!domain) return email
   return `${user[0]}${'•'.repeat(Math.max(user.length - 1, 3))}@${domain}`
 }
+
+export function getProfile(): { name: string; business: string } | null {
+  try {
+    const raw = localStorage.getItem(PROFILE)
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
