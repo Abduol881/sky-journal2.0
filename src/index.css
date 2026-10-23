@@ -72,3 +72,19 @@ body {
 }
 ::view-transition-old(root) { z-index: 1; }
 ::view-transition-new(root) { z-index: 2; }
+/* OTP boxes: gradient border when focused or filled */
+.otp-box {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, var(--border), var(--border)) border-box;
+}
+.otp-box:focus,
+.otp-box[data-filled="true"] {
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, #6B5560, #C7A9A3, #E8D2C4) border-box;
+}
+.otp-box:focus {
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 30%, transparent);
+}

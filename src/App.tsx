@@ -1,23 +1,19 @@
-import Faq from './components/Faq'
-import Features from './components/Features'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import HowItWorks from './components/HowItWorks'
-import Pricing from './components/Pricing'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import Landing from './pages/Landing'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Verify from './pages/Verify'
 
 export default function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <Pricing />
-        <Faq />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/verify" element={<Verify />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }
