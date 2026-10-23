@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #F7EFE7;
+  --surface: #FFFFFF;
+  --surface-2: #FBF6F1;
+  --border: rgb(62 50 57 / 0.09);
+  --text: #3E3239;
+  --muted: #8A7078;
+  --primary: #6B5560;
+  --primary-fg: #F7EFE7;
+  --accent: #C7A9A3;
+  --sand: #E8D2C4;
+  --success: #6F9275;
+  --danger: #B5524A;
+  --warning: #C9954A;
+  --shadow: 0 1px 2px rgb(62 50 57 / .04), 0 12px 32px -8px rgb(62 50 57 / .10);
+}
+
+.dark {
+  --bg: #2E252A;
+  --surface: #3E3239;
+  --surface-2: #4A3D44;
+  --border: rgb(247 239 231 / 0.09);
+  --text: #F7EFE7;
+  --muted: #B49DA3;
+  --primary: #C7A9A3;
+  --primary-fg: #3E3239;
+  --accent: #9E8189;
+  --shadow: 0 1px 2px rgb(0 0 0 / .2), 0 12px 32px -8px rgb(0 0 0 / .45);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-accent: var(--accent);
+  --color-sand: var(--sand);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --radius-card: 24px;
+  --shadow-card: var(--shadow);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(900px 500px at 12% -10%, color-mix(in oklab, var(--sand) 55%, transparent), transparent 60%),
+    radial-gradient(700px 500px at 100% 0%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* the circular theme wipe is driven from JS (src/lib/theme.ts) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }

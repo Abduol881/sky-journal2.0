@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="85 80 330 341" role="img" aria-label="SkyLedger">
+<defs>
+<linearGradient id="sl-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#744F5E"/><stop offset="1" stop-color="#4A3340"/></linearGradient>
+<linearGradient id="sl-top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C79FA5"/><stop offset="1" stop-color="#F6E6E0"/></linearGradient>
+<linearGradient id="sl-diag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBD3CE"/><stop offset="1" stop-color="#B98E98"/></linearGradient>
+<linearGradient id="sl-bot" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#A97D88"/><stop offset="1" stop-color="#F3DFDA"/></linearGradient>
+</defs>
+<rect x="85" y="80" width="330" height="341" rx="84" fill="url(#sl-bg)"/>
+<path d="M333,142 C305,167 255,177 215,177 C182,177 159,190 162,212 C165,236 192,230 220,221 C268,206 310,180 333,142 Z" fill="url(#sl-top)"/>
+<path d="M162,212 C176,230 218,247 258,263 C294,277 326,288 331,312 C333,326 328,336 320,344 C312,322 286,312 250,300 C212,288 182,272 168,252 C157,238 156,224 162,212 Z" fill="url(#sl-diag)"/>
+<path d="M320,344 C302,318 262,298 222,300 C190,302 163,326 159,354 C198,349 242,349 282,347 C304,346 316,346 320,344 Z" fill="url(#sl-bot)"/>
+</svg>
